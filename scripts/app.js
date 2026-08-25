@@ -1,4 +1,4 @@
-var nasc = 2009;
+var nasc = 1991;
 let nome  = "pedrina";
 const viva = true;
 
@@ -8,7 +8,6 @@ function calcIdade(ano=2026){
     return idade;
 }
 
-calcIdade();
+
 alert (`fora da funcao  :  idade ${idade}`);
-alert(`fora da funcao  : chamando calcIdade ${calcIdade(2027)}`)
-alert(`fora da funcao  : chamando calcIdade ${calcIdade(2028)}`)
+alert(`fora da funcao  : chamando calcIdade ${calcIdade()}`)
