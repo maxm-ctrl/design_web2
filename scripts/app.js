@@ -1,10 +1,19 @@
-var nasc = 1991;
-let nome = "pedrina";
+var nasc = 2009
+let nome = "Ângelo";
 const viva = true;
 
 function calcIdade(ano = 2026){
     let idade = ano - nasc;
-    alert(`dentro de função - idade ${idade}`);
+    if (idade<18){
+        alert(`${nome} é  menor de idade.`)
+    }
+    if (idade < 18){
+        let menor = true;
+    }
+    else{
+        let menor = false;
+    }
+    alert(`${nome} é menor de idade? ${menor}\nIdade: ${idade}`);
     return idade;
 }
 
