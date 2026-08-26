@@ -1,7 +1,7 @@
 var nasc = 2009
 let nome = "Ângelo";
 const viva = true;
-
+/*g*/
 function calcIdade(ano = 2026){
     let idade = ano - nasc;
     if (idade<18){
