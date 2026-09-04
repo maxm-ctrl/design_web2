@@ -1,10 +1,9 @@
-let nasc = prompt("Digite o ano do seu nascimento: ");
-nasc = parseInt(nasc);
+let num = Number(prompt("Digite um número: "));
 
-let  viva = confirm("Você está vivo?");
-
-if (viva) {
-    alert(`Você tem ${2026- nasc} anos de idade.`);
+if (num % 2 != 0){
+    alert(`${num} é ímpar`);
+}else if(num == 0){
+    alert(`${num} é ZERO!`);
 }else{
-    alert("Que pena! Você não está mais entre nós.");
+    alert(`${num} é par`);
 }
