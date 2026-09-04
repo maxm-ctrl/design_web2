@@ -1,8 +1,8 @@
-let n1 = number(prompt("digite um número: "));
-let n2 = number(prompt("digite outro número: "));
+let n1 = Number(prompt("digite um número: "));
+let n2 = Number(prompt("digite outro número: "));
 let op;
 do{
-   op = prompt("escolha um opção:\n");
+   let msg = "escolha um opção:\n";
    msg = msg + "1 - somar\n";
    msg = msg + "2 - subtrair\n";
    msg = msg + "3 - multiplicar\n";
