@@ -1,39 +1,57 @@
-const amigos = []
-const cadastro = document.getElementById("cadastro");
-const nome = cadastro.nome;
-const nasc = cadastro.nasc;
-const whatsapp = cadastro.whatsapp;
 
-cadastro.addEventListener("submit", function(L){
-    L.preventDefault()
-    let item = [nome.value, nasc.value, whatsapp.value];
-    amigos.unshift(item);
-    //limpa o formulario
-    cadastro.request();
-    //atualiza a lista
-    exibirlista();
-});
-
-function exibirlista(){
-    let itens = "";
-    for (let i = 0; i<amigos.length; i++){
-        let item = amigos[1]; // item = [nome, nasc, whatssap]
-        // cria o butão para remover
-        let remover = `<button onclick=remove${i}>Remover</button>`
-        //
-
-        let li = `<li>${item[0]} | ${item[1]} | ${item[2]}`
-        //junta o li nos itens
-        itens = itens + li;
+class Animal{
+    constructor(n, c = "desconhecido", a = 0.0, p = 0, r = "Vira-lata"){
+        this.name = n;
+        this.cor = c;
+        this.altura = a;
+        this.peso = p;
+        this.raca = r;
     }
-    //alterar o html da lista para ser igual aos itens
-    lista.innerHTML = itens;
-}
-function remover(i){
-    let item = amigos[i]; //[nome, nasc, whatsapp]
-    let check = confirm(`deseja realmente excluir ${item[0]}?`)
-    if (check == true){
-        amigos.splice{i,1};
-        
+    falar(){
+        alert("oi");
+    }
+    comer(kg){
+        this.peso = this.peso + kg;
+        alert("Comi");
+    }
+    cagar(kg){
+        this.peso = this.peso -  kg;
+        alert("Caguei");
+    }
+    saudar(){
+        let msg = `Olá meu nome é: ${this.nome}\n`;
+        msg = msg + `Cor: ${this.cor}\n`
+        msg = msg + `Raça: ${this.raca}\n`
+        msg = msg + `Peso: ${this.peso}\n`
+        msg = msg + `Altura: ${this.altura}\n`
+        return msg;
     }
 }
+
+class Cachorro extends Animal{
+    constructor(n, c = "desconhecido", a = 0.0, p = 0, r = "Vira-lata"){
+        super(n,c,a,p,r);
+        this.patas = 4;
+    }
+    falar(){
+        alert("au au!");
+    }
+    saudar(){
+        let msg = super().saudar();
+        msg = msg + "\nSou um cachorro!";
+        alert(msg);
+    }
+}
+
+class Passaro extends Animal{
+    constructor(n, c = "desconhecido", a = 0.0, p = 0, r = "Vira-lata"){
+        super(n,c,a,p,r);
+    }
+    falar(){
+        alert("fiu-fiu");
+    }
+}
+
+const estrelinha = new Cachorro("Estrelinha Bolinha");
+const pretinho = new Cachorro("Pretinho", "preto e branco", 1.10, 45, "Vira-lata");
+const quiquinho = new Passaro("Quiquinho chiquinho", undefined, undefined, undefined, "Periquito");
